@@ -1,0 +1,13 @@
+import './Help';
+import './MineData';
+import './Save';
+import './AutoMine';
+import './SellData';
+import './BuyData';
+import './BuyCommand';
+import './Load';
+import './CurrentStorage';
+import './Reset';
+import './Version';
+import './Upgrade';
+import './Alias';
