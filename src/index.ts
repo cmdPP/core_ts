@@ -414,4 +414,6 @@ export class CommandClass {
 	}
 }
 
-import './commands';
+import './commands/index';
+
+export * from './storage';

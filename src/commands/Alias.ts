@@ -1,4 +1,4 @@
-import { Command } from '../';
+import { Command } from '../index';
 import { CommandClass } from '../decorator';
 
 let command = new CommandClass("alias");

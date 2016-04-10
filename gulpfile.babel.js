@@ -6,6 +6,7 @@ import del from 'del';
 import merge from 'merge2';
 import runSeq from 'run-sequence';
 import { version } from './package.json';
+import { exec } from 'child_process';
 
 gulp.task('ts:clean', () => del(['lib', 'src/ver.ts']));
 gulp.task('docs:clean', () => del('docs?(.json)'));
@@ -29,6 +30,14 @@ gulp.task('ts:build', function() {
 		tsResult.dts.pipe(gulp.dest('lib')),
 		tsResult.js.pipe(gulp.dest('lib'))
 	]);
+});
+
+gulp.task('ts:typings', (cb) => {
+	exec('typings bundle --out lib/typings --name core_ts',
+		(err, stdout, stderr) => {
+			if (err) return cb(err);
+			cb();
+		});
 });
 
 // gulp.task('docs:build', () => {

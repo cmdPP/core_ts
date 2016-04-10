@@ -1,4 +1,4 @@
-import { Command } from '../';
+import { Command } from '../index';
 export declare class MineData extends Command {
     func(): void;
     desc(): string;

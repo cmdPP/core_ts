@@ -117,4 +117,5 @@ export declare class CommandClass {
     desc(): Function;
     usage(): Function;
 }
-import './commands';
+import './commands/index';
+export * from './storage';
