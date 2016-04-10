@@ -5,7 +5,7 @@ let command = new CommandClass("save");
 
 @command.cls()
 export class Save extends Command {
-	@command.func()
+	// @command.func()
 	func(): void {
 		this.save();
 	}

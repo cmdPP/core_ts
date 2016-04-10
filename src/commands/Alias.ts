@@ -5,7 +5,7 @@ let command = new CommandClass("alias");
 
 @command.cls()
 export class Alias extends Command {
-	@command.func()
+	// @command.func()
 	func(action: string, name: string, command: string): void {
 		let response: string[] = [];
 		if (!action || !name) {
@@ -31,7 +31,7 @@ export class Alias extends Command {
 		this.respond(...response);
 	}
 
-	@command.desc()
+	// @command.desc()
 	desc(): string[] {
 		let aliases: string[] = [];
 

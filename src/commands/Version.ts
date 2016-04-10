@@ -5,7 +5,7 @@ let command = new CommandClass("version");
 
 @command.cls()
 export class Version extends Command {
-	@command.func()
+	// @command.func()
 	func(): void {
 		this.respond(`v${this.version}`);
 	}

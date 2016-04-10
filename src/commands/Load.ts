@@ -5,7 +5,7 @@ let command = new CommandClass("load");
 
 @command.cls()
 export class Load extends Command {
-	@command.func()
+	// @command.func()
 	func(): void {
 		this.load();
 	}

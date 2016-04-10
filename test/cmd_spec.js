@@ -18,7 +18,7 @@ let cmd = new CMD(
 			storage: 'selectronTube',
 			unlocked: []
 		};
-	}
+	},
 	() => {}
 );
 
@@ -31,9 +31,9 @@ describe('CMD', () => {
 		cmd.data = 25;
 		// cmd.command("help");
 		// console.log(cmd.commands['help'].func());
-		cmd.command("help");
+		cmd.command("help help");
 		console.log(responses);
-		expect(true).to.be.true;
+		expect(parseInt(responses[3].split(': ')[1])).to.equal(25);
 	});
 
 	it('injects the mineData command', () => {

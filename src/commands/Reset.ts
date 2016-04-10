@@ -5,7 +5,7 @@ let command = new CommandClass("reset");
 
 @command.cls()
 export class Reset extends Command {
-	@command.func()
+	// @command.func()
 	func(): void {
 		this.respond("Resetting all progress.");
 		this.reset();

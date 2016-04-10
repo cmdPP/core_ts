@@ -176,7 +176,8 @@ export class _CMD implements ICMD {
 				this.respond('Command not found.');
 			} else {
 				if (this.commands[cmdWArgs[0]].unlocked) {
-					this.commands[cmdWArgs[0]].func(...cmdWArgs.slice(1));
+					// this.commands[cmdWArgs[0]].func(...cmdWArgs.slice(1));
+					this.commands[cmdWArgs[0]].func.apply(CMD.instance, cmdWArgs.slice(1));
 				}
 			}
 		}
@@ -316,6 +317,12 @@ export class CMD extends _CMD {
 	static addCommand(name: string, cls: any) {
 		// this.commands[name] = new cls();
 		this.commands[name] = cls;
+	}
+
+	static addCommands(cmds: { [name: string]: any }) {
+		for (let name in cmds) {
+			this.addCommand(name, cmds[name]);
+		}
 	}
 }
 

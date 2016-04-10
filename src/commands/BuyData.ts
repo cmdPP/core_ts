@@ -8,7 +8,7 @@ export class BuyData extends Command {
 
 	price: number = 150;
 
-	@command.func()
+	// @command.func()
 	func(amt: string, unit: string = "B"): void {
 		let numAmt = this.formatToNumber(amt, unit);
 		if (!numAmt) {

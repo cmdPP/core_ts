@@ -8,7 +8,7 @@ export class SellData extends Command {
 
 	aliases: string[] = ['apt-get'];
 
-	@command.func()
+	// @command.func()
 	func(cmdName: string): void {
 		let response: string[] = [];
 		if (cmdName && cmdName in this.commands) {
@@ -30,7 +30,7 @@ export class SellData extends Command {
 		this.respond(...response);
 	}
 
-	@command.desc()
+	// @command.desc()
 	desc(): string[] {
 		let cmds: string[] = [];
 		for (let cmdName in this.commands) {

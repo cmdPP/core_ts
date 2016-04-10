@@ -8,7 +8,7 @@ export class Help extends Command {
 
 	aliases: string[] = ['?'];
 
-	@command.func()
+	// @command.func()
 	func(subject: string): void {
 		let response: string[] = [];
 		if (subject) {
@@ -18,8 +18,10 @@ export class Help extends Command {
 			} else {
 				let cmd = this.commands[subject];
 
-				let desc = cmd.desc();
-				let usage = cmd.usage();
+				// let desc = cmd.desc();
+				let desc = cmd.desc.apply(this);
+				// let usage = cmd.usage();
+				let usage = cmd.usage.apply(this);
 				let aliases = cmd.aliases;
 
 				console.log('Desc:', desc);
@@ -56,8 +58,8 @@ export class Help extends Command {
 	}
 
 	// @command.desc()
-	desc(): string {
-		return "Gives list of commands or specific instructions for commands.";
+	desc(): string[] {
+		return ["Gives list of commands or specific instructions for commands.", `Data: ${this.data}`];
 	}
 
 	// @command.usage()

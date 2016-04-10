@@ -5,7 +5,7 @@ let command = new CommandClass("currentStorage");
 
 @command.cls()
 export class CurrentStorage extends Command {
-	@command.func()
+	// @command.func()
 	func(): void {
 		this.respond(...[
 			'Your current storage is:',

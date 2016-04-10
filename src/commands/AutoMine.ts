@@ -8,7 +8,7 @@ export class AutoMine extends Command {
 
 	price: number = 20;
 
-	@command.func()
+	// @command.func()
 	func(action: string): void {
 		if (['start', 'stop'].indexOf(action) === -1) {
 			this.respond("Unrecognized parameter.");
@@ -30,7 +30,7 @@ export class AutoMine extends Command {
 		this.respond(...response);
 	}
 
-	@command.desc()
+	// @command.desc()
 	desc(): string { return `Increments your data every second by {${this.formatToString(this.autoIncrement)}}.`; }
 
 	usage(): string { return "autoMine (start | stop)"; }

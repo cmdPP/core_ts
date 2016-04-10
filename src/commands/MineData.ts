@@ -5,7 +5,7 @@ let command = new CommandClass("mineData");
 
 @command.cls()
 export class MineData extends Command {
-	@command.func()
+	// @command.func()
 	func(): void {
 		let response: string[] = [];
 		if (this.checkStorage()) {
@@ -17,7 +17,7 @@ export class MineData extends Command {
 		this.respond(...response);
 	}
 
-	@command.desc()
+	// @command.desc()
 	desc(): string {
 		return `Increments data by your increment amount. You current increment is {${this.formatToString(this.increment)}}`;
 	}

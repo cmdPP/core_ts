@@ -5,7 +5,7 @@ let command = new CommandClass("upgrade");
 
 @command.cls()
 export class Upgrade extends Command {
-	@command.func()
+	// @command.func()
 	func(command: string): void {
 		let response: string[] = [];
 		if (command === "mineData") {
@@ -38,7 +38,7 @@ export class Upgrade extends Command {
 		this.respond(...response);
 	}
 
-	@command.desc()
+	// @command.desc()
 	desc(): string[] {
 		let response: string[] = [];
 		let incVal = this.increment + 1;
